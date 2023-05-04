@@ -1,0 +1,24 @@
+version: "3.7"
+services:
+  url-shortener-server:
+    restart: always
+    container_name: url-shortener-server
+    env_file:
+      - .env
+    environment:
+      - NODE_ENV=production
+    build:
+      context: ./
+    image: url-shortener-server
+    ports:
+      - "5000:5000"
+
+    volumes:
+      - $PWD/server/Caddyfile:/etc/caddy/Caddyfile
+      - $PWD/server/site:/srv
+      - caddy_data:/data
+      - caddy_config:/config
+
+volumes:
+  caddy_data:
+  caddy_config:
