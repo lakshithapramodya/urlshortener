@@ -24,10 +24,10 @@ function Body() {
   }
 
   return (
-    <div className="p-10 w-full h-screen flex-col ">
+    <div className="p-10 w-full h-screen flex-col">
       <Header />
-      <div className="flex justify-center ">
-        <div className="lg:w-1/2 mt-20  p-4 pb-16 w-full rounded-lg">
+      <div className="flex justify-center">
+        <div className="lg:w-1/2 mt-20 min-w-5xl p-4 pb-16  rounded-lg">
           <Input handleSubmit={handleSubmit} setUrl={setUrl} url={url} />
           <ShortUrl
             shortUrl={shortUrl}

@@ -11,7 +11,7 @@ export default function ShortUrl({
   copied,
 }) {
   return (
-    <div className="mt-8 w-full">
+    <div className="mt-8 ">
       <div className="flex justify-center">
         {shortUrl && (
           <div className="bg-gray-200 p-1 px-4 ml-4 rounded-md flex items-center justify-center">
