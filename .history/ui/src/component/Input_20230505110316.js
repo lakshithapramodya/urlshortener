@@ -11,8 +11,8 @@ export default function Input({ handleSubmit, setUrl, url }) {
       <div className="text-2xl text-[#495e73] font-semibold mt-4 text-center">
         <h3>Enter your long URL to shorten</h3>
       </div>
-      <form onSubmit={handleSubmit} className="mt-5 w-full">
-        <div className="px-4  md:px-8 flex justify-center py-2 rounded-3xl bg-gray-200 w-full">
+      <form onSubmit={handleSubmit} className="mt-5">
+        <div className="  md:px-8 flex justify-center py-2 rounded-3xl bg-gray-200 w-full">
           <div className="flex items-center justify-center space-x-2 pr-4 pl-2 xl:px-0">
             <div className="h-4 w-4  rounded-full bg-[#e3736e]" />
             <div className="h-4 w-4   rounded-full bg-[#fabf3f]" />

@@ -24,7 +24,7 @@ function Body() {
   }
 
   return (
-    <div className="p-4 pt-10 md:p-10 w-full h-screen flex-col ">
+    <div className="p-4 md:p-10 w-full h-screen flex-col ">
       <Header />
       <div className="flex justify-center ">
         <div className="lg:w-1/2 mt-20  p-4 pb-16 w-full rounded-lg">
