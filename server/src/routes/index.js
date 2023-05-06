@@ -4,6 +4,13 @@ import {
   getAnalytics,
   getShortUrl,
 } from "../controllers/shortUrl.js";
+import {
+  signup,
+  login,
+  verifyToken,
+  getUser,
+  refreshToken,
+} from "../controllers/user.js";
 
 export default function routes(app) {
   app.get("/healthCheck", (req, res) => {
@@ -17,4 +24,9 @@ export default function routes(app) {
   app.get("/api/url/:short", getShortUrl);
 
   app.get("/api/analytics", getAnalytics);
+
+  app.post("/api/signup", signup);
+  app.post("/api/login", login);
+  app.get("/api/user", verifyToken, getUser);
+  app.get("api/refresh", refreshToken, verifyToken, getUser);
 }

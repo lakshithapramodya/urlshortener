@@ -2,16 +2,12 @@ import shortUrl from "../models/shortUrl.js";
 import analytics from "../models/analytics.js";
 
 export async function createShortUrl(req, res) {
-  const { full } = req.body;
-
-  const newUrl = await shortUrl.create({ full });
+  const newUrl = await shortUrl.create({ full: req.body.full });
   return res.send(newUrl);
 }
 
 export async function handleRedirect(req, res) {
-  const { short } = req.params;
-
-  const shortId = await shortUrl.findOne({ short });
+  const shortId = await shortUrl.findOne({ short: req.params.short });
 
   if (!shortId) {
     return res.sendStatus(404);

@@ -1,6 +1,7 @@
+import * as dotenv from "dotenv";
+dotenv.config();
 export default {
-  port: 5000,
-  dbUrl:
-    "mongodb+srv://admin:j2VIxPgfKaAH7EfN@cluster0.b4rhyvn.mongodb.net/urlShortener?retryWrites=true&w=majority",
-  
+  port: process.env.PORT,
+  dbUrl: process.env.MONGODB,
+  corsOrigin: process.env.CORS_ORIGIN,
 };
