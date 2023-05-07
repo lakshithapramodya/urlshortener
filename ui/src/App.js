@@ -17,6 +17,7 @@ function App() {
       .catch((err) => console.error(err));
 
     const data = await res.data;
+    console.log(data);
     return data;
   };
 
