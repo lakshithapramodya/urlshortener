@@ -3,9 +3,9 @@ import Header from "./component/Header";
 import Footer from "./component/Footer";
 import axios from "axios";
 import { SERVER_ENDPOINTS } from "./config";
-import LinksTable from "./component/Table";
+import DataTable from "./component/DataTable";
 
-export default function Analytics() {
+export default function Statistics() {
   const [user, setUser] = useState();
   const [urlData, setUrlData] = useState([]);
 
@@ -22,7 +22,7 @@ export default function Analytics() {
 
   const sendAnalyticsRequest = async () => {
     const res = await axios
-      .post(`${SERVER_ENDPOINTS}/api/analytics`, {
+      .post(`${SERVER_ENDPOINTS}/api/statistics`, {
         user: user.email,
       })
       .catch((err) => {
@@ -44,12 +44,21 @@ export default function Analytics() {
         setUrlData(data);
       });
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user]);
   return (
     <div className="flex flex-col min-h-screen">
+      <div className="flex items-center justify-center text-2xl">
+        <img
+          className="h-10"
+          src="https://i.ibb.co/f44H7Nb/linksnip-logo.png"
+          alt=""
+        />
+        <h1 className="text-[#ed3f4a] font-bold">Statistics</h1>
+      </div>
       <Header hideLogin={false} user={user} />
-      <div className="md:w-2/3 w-[90%] m-auto">
-        <LinksTable urlData={urlData} />
+      <div className="max-w-[90%] m-auto">
+        <DataTable urlData={urlData} />
       </div>
       <Footer />
     </div>
