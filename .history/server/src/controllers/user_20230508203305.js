@@ -49,7 +49,6 @@ export async function login(req, res) {
     }
     const token = jwt.sign({ id: validUser._id }, secret, { expiresIn: "1hr" });
     res.cookie("token", token, {
-      secure: true,
       httpOnly: true,
       withCredentials: true,
       maxAge: 3600000,
@@ -69,7 +68,6 @@ export async function login(req, res) {
 
 export async function verifyToken(req, res, next) {
   const token = req.cookies.token;
-  console.log(token);
   if (!token) {
     return res.json({ status: "error", message: "No token found" });
   }
