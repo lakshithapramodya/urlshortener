@@ -26,6 +26,7 @@ export default function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
     sendRequest().then((data) => {
+      console.log(data);
       if (data.message === "Password incorrect") {
         setError("The password that you've entered is incorrect.");
         setPassword("");
@@ -40,7 +41,7 @@ export default function Login() {
         if (pathname === "/statistics") {
           window.location.reload();
         } else {
-          navigate("/");
+          // navigate("/");
         }
       }
     });
