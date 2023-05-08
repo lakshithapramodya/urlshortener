@@ -104,6 +104,7 @@ export async function logout(req, res, next) {
   }
   try {
     res.clearCookie("token");
+    req.cookies.token = "";
     return res.json({ status: "ok", message: "Logout successfully" });
   } catch (err) {
     return res.json({ status: "error", message: "Authentication Error" });
