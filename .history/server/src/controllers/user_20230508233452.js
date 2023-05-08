@@ -4,7 +4,7 @@ import bcrypt from "bcrypt";
 import config from "../../config/defaults.js";
 
 const secret = config.secret;
-const domain = config.domain;
+const corsOrigin = config.corsOrigin;
 
 export async function signup(req, res) {
   let existingUser;
@@ -54,7 +54,7 @@ export async function login(req, res) {
       httpOnly: true,
       withCredentials: true,
       maxAge: 3600000,
-      domain: domain,
+      domain: "http://localhost",
     });
 
     return res.json({
@@ -70,6 +70,7 @@ export async function login(req, res) {
 
 export async function verifyToken(req, res, next) {
   const token = req.cookies.token;
+  console.log(token);
   if (!token) {
     return res.json({ status: "error", message: "No token found" });
   }

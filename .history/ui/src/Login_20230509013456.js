@@ -26,7 +26,6 @@ export default function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
     sendRequest().then((data) => {
-      console.log(data);
       if (data.message === "Password incorrect") {
         setError("The password that you've entered is incorrect.");
         setPassword("");

@@ -70,6 +70,7 @@ export async function login(req, res) {
 
 export async function verifyToken(req, res, next) {
   const token = req.cookies.token;
+  console.log(token);
   if (!token) {
     return res.json({ status: "error", message: "No token found" });
   }
