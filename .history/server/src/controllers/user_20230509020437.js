@@ -54,6 +54,7 @@ export async function login(req, res) {
       sameSite: "none",
       withCredentials: true,
       maxAge: 3600000,
+      domain: domain,
     });
 
     return res.json({

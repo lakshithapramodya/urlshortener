@@ -4,7 +4,7 @@ import routes from "./routes/index.js";
 import db from "./db.js";
 import cors from "cors";
 import cookieParser from "cookie-parser";
-import { shouldSendSameSiteNone } from "should-send-same-site-none";
+const { shouldSendSameSiteNone } = require("should-send-same-site-none");
 
 const app = express();
 
@@ -27,5 +27,5 @@ routes(app);
 
 app.listen(port, () => {
   console.log(`Application listening at http://localhost:${port}`);
-  console.log("This is version 1.6");
+  console.log("This is version 1.3");
 });
