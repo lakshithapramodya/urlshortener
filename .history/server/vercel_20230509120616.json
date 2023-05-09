@@ -11,5 +11,10 @@
     }
   ],
 
-  "routes": [{ "src": "./src/(.*)", "dest": "./src/app.js" }]
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/api/server.js"
+    }
+  ]
 }
