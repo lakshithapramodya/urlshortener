@@ -71,7 +71,6 @@ export async function login(req, res) {
 export async function verifyToken(req, res, next) {
   const token = req.cookies.token;
   if (!token) {
-    req.id = "";
     return res.json({ status: "error", message: "No token found" });
   }
   try {
@@ -100,6 +99,7 @@ export async function getUser(req, res, next) {
 
 export async function logout(req, res, next) {
   const prevToken = req.cookies.token;
+  console.log(req.headers.cookie);
   if (!prevToken) {
     return res.json({ status: "error", message: "Could not find token" });
   }

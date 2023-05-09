@@ -37,9 +37,9 @@ export default function Header({ user, hideLogin }) {
           {window.location.pathname === "/" && (
             <Link
               to="/statistics"
-              className="bg-[#ecf0f3] pt-[0.2rem] pb-2 w-[5.5rem] text-gray-500 rounded-lg text-center"
+              className="bg-[#ecf0f3] pt-[0.2rem] pb-2 w-[5.5rem] text-gray-500 rounded-lg "
             >
-              Statistics
+              <button>Statistics</button>
             </Link>
           )}
 

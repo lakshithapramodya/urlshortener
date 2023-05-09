@@ -34,15 +34,6 @@ export default function Header({ user, hideLogin }) {
           <h3 className="rounded-lg px-2 py-1 text-gray-500 italic">
             Logged in as <span className="font-bold">{user.username}</span>{" "}
           </h3>
-          {window.location.pathname === "/" && (
-            <Link
-              to="/statistics"
-              className="bg-[#ecf0f3] pt-[0.2rem] pb-2 w-[5.5rem] text-gray-500 rounded-lg text-center"
-            >
-              Statistics
-            </Link>
-          )}
-
           <button
             className="bg-[#ed3f4a] pt-[0.2rem] pb-2 w-[5.5rem] text-gray-100 rounded-lg "
             onClick={handleLogout}

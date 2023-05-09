@@ -39,7 +39,7 @@ export default function Header({ user, hideLogin }) {
               to="/statistics"
               className="bg-[#ecf0f3] pt-[0.2rem] pb-2 w-[5.5rem] text-gray-500 rounded-lg text-center"
             >
-              Statistics
+              <button>Statistics</button>
             </Link>
           )}
 

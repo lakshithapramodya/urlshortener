@@ -42,13 +42,13 @@ export default function Header({ user, hideLogin }) {
               Statistics
             </Link>
           )}
-
-          <button
-            className="bg-[#ed3f4a] pt-[0.2rem] pb-2 w-[5.5rem] text-gray-100 rounded-lg "
+          <Link
             onClick={handleLogout}
+            to="/statistics"
+            className="bg-[#ed3f4a] pt-[0.2rem] pb-2 w-[5.5rem] text-gray-100 rounded-lg "
           >
-            Logout
-          </button>
+            Statistics
+          </Link>
         </div>
       ) : (
         <div className={`flex space-x-2 ${hideLogin && "hidden"}`}>

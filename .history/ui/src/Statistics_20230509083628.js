@@ -49,7 +49,7 @@ export default function Statistics() {
   return (
     <div className="flex flex-col min-h-screen">
       <Header hideLogin={false} user={user} />
-      <div className="flex items-center justify-center text-2xl mt-auto">
+      <div className="flex items-center justify-center text-2xl mta">
         <img
           className="h-10"
           src="https://i.ibb.co/f44H7Nb/linksnip-logo.png"
@@ -57,7 +57,7 @@ export default function Statistics() {
         />
         <h1 className="text-[#ed3f4a] font-bold">Statistics</h1>
       </div>
-      <div className="max-w-[90%] mx-auto mt-6">
+      <div className="max-w-[90%] m-auto">
         <DataTable urlData={urlData} />
       </div>
       <Footer />

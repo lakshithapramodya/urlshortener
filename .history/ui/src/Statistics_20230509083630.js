@@ -57,7 +57,7 @@ export default function Statistics() {
         />
         <h1 className="text-[#ed3f4a] font-bold">Statistics</h1>
       </div>
-      <div className="max-w-[90%] mx-auto mt-6">
+      <div className="max-w-[90%] m-auto">
         <DataTable urlData={urlData} />
       </div>
       <Footer />

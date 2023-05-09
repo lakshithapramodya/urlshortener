@@ -35,12 +35,12 @@ export default function Header({ user, hideLogin }) {
             Logged in as <span className="font-bold">{user.username}</span>{" "}
           </h3>
           {window.location.pathname === "/" && (
-            <Link
-              to="/statistics"
-              className="bg-[#ecf0f3] pt-[0.2rem] pb-2 w-[5.5rem] text-gray-500 rounded-lg text-center"
+            <button
+              onClick={() => navigate("/statistics")}
+              className="bg-[#ecf0f3] pt-[0.2rem] pb-2 w-[5.5rem] text-gray-500 rounded-lg "
             >
-              Statistics
-            </Link>
+              Stat
+            </button>
           )}
 
           <button
