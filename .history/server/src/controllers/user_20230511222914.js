@@ -106,7 +106,7 @@ export async function logout(req, res, next) {
   }
   try {
     const validUser = req.id;
-    res.clearCookie("token", {
+    res.clearCookie("token", "", {
       secure: true,
       httpOnly: true,
       sameSite: "lax",

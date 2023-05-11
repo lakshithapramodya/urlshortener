@@ -13,7 +13,7 @@ export default function Input({ handleSubmit, setUrl, url }) {
       <div className="text-xl text-[#424242] font-semibold  text-center">
         <h3>Enter your long URL to shorten</h3>
       </div>
-      <div className="mt-5 w-full md:w-[90%]">
+      <div className="mt-5 w-[90%]">
         <div
           className="flex items-center border-2 rounded-full py-2 
      shadow-md"
@@ -29,7 +29,7 @@ export default function Input({ handleSubmit, setUrl, url }) {
           <ChevronRightIcon
             onClick={handleSubmit}
             className="h-8 bg-[#ff385c]
-         text-white rounded-full p-2 cursor-pointer mx-2 "
+         text-white rounded-full p-2 cursor-pointer md:mx-2 "
           />
         </div>
       </div>
