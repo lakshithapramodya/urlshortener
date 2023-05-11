@@ -40,9 +40,7 @@ export default function DataTable({ urlData }) {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
 
-  const url = Url;
-
-  console.log(url);
+  console.log(Url);
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
