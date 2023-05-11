@@ -39,7 +39,6 @@ const columns = [
 export default function DataTable({ urlData }) {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
-  const url = Url;
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
@@ -92,9 +91,9 @@ export default function DataTable({ urlData }) {
                         column.id === "short" ? (
                           <a
                             className="underline text-[#ff385c]"
-                            href={`${url}/${row[column.id]}`}
+                            href={`${Url}/${row[column.id]}`}
                           >
-                            {`${url}/${row[column.id]}`}
+                            {`${Url}/${row[column.id]}`}
                           </a>
                         ) : column.id === "full" ? (
                           <a className="line-clamp-1" href={row[column.id]}>

@@ -92,9 +92,9 @@ export default function DataTable({ urlData }) {
                         column.id === "short" ? (
                           <a
                             className="underline text-[#ff385c]"
-                            href={`${url}/${row[column.id]}`}
+                            href={`${window.location.origin}/${row[column.id]}`}
                           >
-                            {`${url}/${row[column.id]}`}
+                            {`${window.location.origin}/${row[column.id]}`}
                           </a>
                         ) : column.id === "full" ? (
                           <a className="line-clamp-1" href={row[column.id]}>
