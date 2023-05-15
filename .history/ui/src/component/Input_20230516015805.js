@@ -1,32 +1,28 @@
 import { ChevronRightIcon } from "@heroicons/react/24/solid";
-import React from "react";
-import { ToastContainer, toast } from "react-toastify";
+import React, { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import validator from "validator";
 
 export default function Input({ handleSubmit, setUrl, url }) {
+  const [validUrl, setValidUrl] = useState(false);
+
   function isValidUrl(string) {
-    if (validator.isURL(string)) {
+    try {
+      new URL(string);
       return true;
-    } else {
+    } catch (err) {
       return false;
     }
   }
 
+  useEffect(() => {
+    const validity = isValidUrl(url);
+    setValidUrl(validity);
+    console.log(validity);
+  }, [url, validUrl]);
+
   return (
     <div className="w-full flex flex-col items-center justify-center">
-      <ToastContainer
-        position="top-center"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="light"
-      />
       <div className="text-xl text-[#424242] font-semibold font-mono text-center">
         <h1>Enter Your Long URL to Shorten</h1>
       </div>
@@ -45,7 +41,6 @@ export default function Input({ handleSubmit, setUrl, url }) {
           />
           <ChevronRightIcon
             onClick={(e) => {
-              const validUrl = isValidUrl(url);
               if (!validUrl && url) {
                 console.log("Please enter a valid url!");
                 return toast.error("Please enter a valid url!");

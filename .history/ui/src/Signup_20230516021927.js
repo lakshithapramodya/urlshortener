@@ -4,7 +4,6 @@ import axios from "axios";
 import { SERVER_ENDPOINTS } from "./config";
 import { useNavigate } from "react-router-dom";
 import Footer from "./component/Footer";
-import { ToastContainer, toast } from "react-toastify";
 
 export default function Signup() {
   const navigate = useNavigate();
@@ -47,9 +46,6 @@ export default function Signup() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (password.length < 8) {
-      return toast.error("Password must contain 8 or more characters");
-    }
     signupRequest().then((data) => {
       if (data.status === "ok") {
         navigate("/login");
@@ -58,7 +54,6 @@ export default function Signup() {
         setEmail("");
         setPassword("");
         setError("User already exists.");
-        return toast.error("User already exists.");
       }
     });
   };
@@ -67,18 +62,6 @@ export default function Signup() {
     <div>
       <Header hideLogin={true} />
       <div className="min-h-screen flex flex-col justify-center items-center pt-32">
-        <ToastContainer
-          position="top-center"
-          autoClose={5000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-          theme="light"
-        />
         <div className="flex flex-col justify-center items-center w-[90%] md:w-2/3 lg:w-1/2 xl:w-[30%]">
           <div className="flex items-center justify-center text-2xl">
             <img

@@ -1,14 +1,14 @@
 import { ChevronRightIcon } from "@heroicons/react/24/solid";
-import React from "react";
+import React, { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import validator from "validator";
 
 export default function Input({ handleSubmit, setUrl, url }) {
   function isValidUrl(string) {
-    if (validator.isURL(string)) {
+    try {
+      new URL(string);
       return true;
-    } else {
+    } catch (err) {
       return false;
     }
   }
@@ -48,7 +48,7 @@ export default function Input({ handleSubmit, setUrl, url }) {
               const validUrl = isValidUrl(url);
               if (!validUrl && url) {
                 console.log("Please enter a valid url!");
-                return toast.error("Please enter a valid url!");
+                return toast.error("Error Notification !");
               }
               handleSubmit(e);
             }}

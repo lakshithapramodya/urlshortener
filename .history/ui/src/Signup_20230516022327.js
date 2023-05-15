@@ -58,7 +58,6 @@ export default function Signup() {
         setEmail("");
         setPassword("");
         setError("User already exists.");
-        return toast.error("User already exists.");
       }
     });
   };
